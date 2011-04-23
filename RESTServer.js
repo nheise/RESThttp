@@ -7,7 +7,7 @@ var httpResponseHeader = require('./lib/HTTPResponseHeader.js');
 var response = require('./lib/Response.js');
 
 var resourceRepository = require('./lib/ResourceRepository.js').createRepository();
-resourceRepository.addResources(require('./resources/testResource.js').resources);
+resourceRepository.addResources(require('./resources/testResource/testResource.js').resources);
 
 var http = require('http');
 

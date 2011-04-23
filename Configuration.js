@@ -5,4 +5,4 @@ exports.server = {
     port: 1234
 };
 
-exports.SERVER_PATH = "./www";
+exports.RESOURCE_PATH = "./resources";
