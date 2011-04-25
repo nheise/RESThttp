@@ -56,7 +56,7 @@ function foundMediaType(mediaTypeResourceCanRespond) {
 
 function findMediaTypeResourceCanRespond(resourceMethode, requestMediaTypes) {
 	for(index in requestMediaTypes) {
-		var requestMediaType = requestMediaTypes[index];
+		var requestMediaType = requestMediaTypes[index][0];
 		if(resourceMethode[requestMediaType] != undefined) {
 			return requestMediaType;
 		}
@@ -64,12 +64,21 @@ function findMediaTypeResourceCanRespond(resourceMethode, requestMediaTypes) {
 }
 
 function resourceSupportRequestMethode(resource, requestMethod) {
-	console.log(resource + " # " + requestMethod + " # " + resource[requestMethod]);
+//	console.log(resource + " # " + requestMethod + " # " + resource[requestMethod]);
 	return resource[requestMethod] != undefined;
 }
 
 function extractAcceptMediaTypesFromRequest(request) {
-	var requestAcceptField = request.headers.accept;
-	var acceptMediaTypePart = requestAcceptField.split(';')[0];
-	return acceptMediaTypePart.split(',');
+    
+    var requestAcceptField = request.headers.accept;
+    
+    var mediaTypesTemp = requestAcceptField.split( "," );
+
+    var mediaTypes = new Array();
+
+    for(var index in mediaTypesTemp) {
+        mediaTypes.push( mediaTypesTemp[index].split( ";" ) );
+    }
+    
+    return mediaTypes;
 }
