@@ -5,4 +5,4 @@ exports.server = {
     port: 1234
 };
 
-exports.RESOURCE_PATH = "./resources";
+exports.RESOURCE_PATH = "./components";
