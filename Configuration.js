@@ -5,4 +5,5 @@ exports.server = {
     port: 1234
 };
 
+exports.RESOURCE_DIR_NAME = "components";
 exports.RESOURCE_PATH = "./components";
