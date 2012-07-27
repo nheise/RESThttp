@@ -1,0 +1,6 @@
+{
+  "name": "RESThttp",
+  "version": "v0.2",
+  "main": "./lib/index.js",
+  "description": "RESTful http server."
+}
